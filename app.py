@@ -1,4 +1,5 @@
 import streamlit as st
+import os
 from langchain_ollama import ChatOllama
 from langchain_core.output_parsers import StrOutputParser
 
@@ -53,7 +54,7 @@ with st.sidebar:
     st.header("⚙️ Configuration")
     selected_model = st.selectbox(
         "Choose Model",
-        ["deepseek-r1:1.5b", "deepseek-r1:3b"],
+        ["deepseek-r1:1.5b"],
         index=0
     )
     st.divider()
@@ -73,7 +74,7 @@ with st.sidebar:
 llm_engine=ChatOllama(
     model=selected_model,
     base_url="http://localhost:11434",
-
+   
     temperature=0.3
 
 )
