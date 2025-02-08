@@ -53,7 +53,7 @@ st.caption("🚀 Your AI Pair Programmer with Debugging Superpowers")
 with st.sidebar:
     st.header("⚙️ Configuration")
     selected_model = st.selectbox(
-        "Choose Model",
+        "Choosen Model",
         ["deepseek-r1:1.5b"],
         index=0
     )
@@ -74,7 +74,8 @@ with st.sidebar:
 llm_engine=ChatOllama(
     model=selected_model,
     base_url="http://localhost:11434",
-   
+    max_tokens=550,
+
     temperature=0.3
 
 )
