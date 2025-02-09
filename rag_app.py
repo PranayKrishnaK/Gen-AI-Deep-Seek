@@ -5,6 +5,7 @@ from langchain_core.vectorstores import InMemoryVectorStore
 from langchain_ollama import OllamaEmbeddings
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_ollama.llms import OllamaLLM
+import os
 
 st.markdown("""
     <style>
@@ -72,7 +73,7 @@ Query: {user_query}
 Context: {document_context} 
 Answer:
 """
-PDF_STORAGE_PATH = 'document_store/pdfs/'
+PDF_STORAGE_PATH = 'documents/pdfs/'
 EMBEDDING_MODEL = OllamaEmbeddings(model="deepseek-r1:1.5b")
 DOCUMENT_VECTOR_DB = InMemoryVectorStore(EMBEDDING_MODEL)
 LANGUAGE_MODEL = OllamaLLM(model="deepseek-r1:1.5b")
@@ -112,7 +113,7 @@ def generate_answer(user_query, context_documents):
 # UI Configuration
 
 
-st.title("📘 DocuMind AI")
+st.title("📘 RagMind AI")
 st.markdown("### Your Intelligent Document Assistant")
 st.markdown("---")
 
